@@ -82,6 +82,12 @@ namespace Assessment2
             textBox4.Clear();
             textBox5.Clear();
 
+            label13.Text = ("Success");
+
+            label14.Text = newCustomer.GetInformation();
+
+            label6.Text = bintree.Count().ToString();
+
 
         }
     }

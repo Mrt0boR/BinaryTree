@@ -95,17 +95,32 @@ namespace Assessment2
 
         }
 
-        public int CompareTo(Customer currentNodeCustomer)
+        public int CompareTo(Customer CustomerInTree)
         {
-            return this.lastName.CompareTo(currentNodeCustomer.lastName);
+            
+            if (lastName != null)
+            {
+                
+                Customer customerBeingEntered = (Customer)CustomerInTree; // Casting 'other' to Customer type
+                return this.LastName.CompareTo(customerBeingEntered.LastName);
+
+
+            }
+            else
+            {
+                MessageBox.Show("Please Enter a customer Last Name", "Last Name Box UnFilled", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+           
         }
 
-        public int CompareToFirstName(Customer currentNodeCustomer)
+        public int CompareToFirstName(Customer CustomerInTree)
         {
 
             if (firstName != null)
             {
-                return this.FirstName.CompareTo(currentNodeCustomer.firstName);
+                Customer customerBeingEntered = (Customer)CustomerInTree;
+                return this.FirstName.CompareTo(customerBeingEntered.firstName);
             }
             else
             {
