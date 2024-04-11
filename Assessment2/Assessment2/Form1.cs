@@ -88,7 +88,7 @@ namespace Assessment2
 
             label6.Text = bintree.Count().ToString();
 
-
+            //t
         }
     }
 }
