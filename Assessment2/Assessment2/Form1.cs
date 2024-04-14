@@ -84,11 +84,57 @@ namespace Assessment2
 
             label13.Text = ("Success");
 
-            label14.Text = newCustomer.GetInformation();
 
             label6.Text = bintree.Count().ToString();
 
-            //t
+            inOrderUpdater();
+            preOrderUpdater();
+            postOrderUpdater();
+        }
+
+
+        private void inOrderUpdater()
+        {
+            string inOrderTreeData = bintree.InOrder();
+            label15.Text = inOrderTreeData;
+
+        }
+
+        private void preOrderUpdater()
+        {
+            string preOrderTreeData = bintree.PreOrder();  
+            label16.Text = preOrderTreeData;
+
+        }
+
+        private void postOrderUpdater()
+        {
+            string postOrderTreeData = bintree.PostOrder();
+            label17.Text  = postOrderTreeData;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                MessageBox.Show("Search Box is Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
+            else
+            {
+                string searchedLastName = textBox6.Text;
+                Customer seachedCustomer = bintree.SearchByLastName(searchedLastName);
+
+                if (seachedCustomer == null)
+                {
+                    MessageBox.Show("The Customer Cannot be Found, Please Check Customer Details and Check for any Typos",
+                        "Customer Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    label19.Text = seachedCustomer.GetInformation();
+                }
+            }
         }
     }
 }

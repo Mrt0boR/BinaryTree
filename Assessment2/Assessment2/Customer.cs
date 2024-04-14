@@ -87,7 +87,7 @@ namespace Assessment2
 
 
             return "First Name: " + firstName +
-                    "Last Name: " + lastName +
+                   ", Last Name: " + lastName +
                    ", Age: " + age +
                    ", Address: " + address +
                    ", Amount Owed: " + amountOwed;
